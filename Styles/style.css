@@ -678,6 +678,15 @@ img {
     grid-row: span 2;
 }
 
+.mosaic-large .mosaic-img img {
+    object-position: center 82%;
+}
+
+.mosaic-large .mosaic-overlay {
+    background: linear-gradient(to top, rgba(12, 26, 19, 0.92) 0%, rgba(12, 26, 19, 0.35) 32%, transparent 60%);
+    padding: 24px 28px;
+}
+
 .mosaic-img {
     width: 100%;
     height: 100%;
@@ -701,6 +710,10 @@ img {
     background: linear-gradient(to top, rgba(15, 32, 24, 0.96) 0%, rgba(15, 32, 24, 0.3) 100%);
 }
 
+.mosaic-large:hover .mosaic-overlay {
+    background: linear-gradient(to top, rgba(12, 26, 19, 0.96) 0%, rgba(12, 26, 19, 0.45) 35%, transparent 65%);
+}
+
 .exp-category {
     font-size: 0.72rem;
     font-weight: 600;
@@ -708,6 +721,7 @@ img {
     text-transform: uppercase;
     color: var(--accent-gold);
     margin-bottom: 8px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .mosaic-overlay h3 {
@@ -715,12 +729,14 @@ img {
     font-size: 1.7rem;
     margin-bottom: 10px;
     line-height: 1.3;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .mosaic-overlay p {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.6;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
 
 /* ========================================================
