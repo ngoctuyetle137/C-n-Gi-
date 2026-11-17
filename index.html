@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cần Giờ Quê Tôi | Du Lịch Sinh Thái</title>
+    <!-- Google Fonts phong cách Luxury Editorial giống Jacada Travel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    <!-- Top Announcement Bar (tùy chọn) -->
+    <div class="top-announcement">
+        <p>Khám phá Khu Dự trữ Sinh quyển Thế giới Cần Giờ &bull; Hòa nhập vào Thiên nhiên</p>
+    </div>
+
+    <!-- Navigation Header giống phong cách Jacada Travel -->
+    <header class="site-header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo">
+                <span class="logo-main">CẦN GIỜ</span>
+                <span class="logo-sub">Rừng Ngập Mặn</span>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="nav-active">Trang Chủ</a></li>
+                    <li><a href="gioithieu.html">Giới Thiệu</a></li>
+                    <li><a href="diadiem.html">Địa Điểm</a></li>
+                    <li><a href="#about">Lễ Hội</a></li>
+                    <li><a href="#testimonials">Check-in</a></li>
+                    <li><a href="#testimonials">Ẩm thực</a></li>
+                    <li><a href="#itineraries">Lịch Trình Thiết Kế</a></li>
+
+                    <li><a href="#testimonials">Cảm Nhận</a></li>
+                    <li><a href="#contact" class="btn-nav-cta">Thiết Kế Chuyến Đi</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner Full-width có overlay & Typography sang trọng -->
+    <section class="hero-section">
+        <div class="hero-media-wrapper">
+            <div class="hero-slideshow" id="heroSlideshow">
+                <div class="hero-slide active" style="background-image: url('Images/bia.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('Images/bia2.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('Images/bia3.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('Images/bia4.jpg');"></div>
+            </div>
+            <div class="hero-gradient-overlay"></div>
+            <!-- Nút chấm chuyển slide -->
+            <div class="hero-dots" id="heroDots">
+                <span class="hero-dot active" data-index="0"></span>
+                <span class="hero-dot" data-index="1"></span>
+                <span class="hero-dot" data-index="2"></span>
+                <span class="hero-dot" data-index="3"></span>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <span class="hero-eyebrow">KHU DỰ TRỮ SINH QUYỂN THẾ GIỚI </span>
+            <h1 class="hero-title">Hành Trình Chạm Vào <br><em>Linh Hồn Rừng Ngập Mặn</em></h1>
+            <p class="hero-description">
+                Được thiết kế tinh tế theo phong cách cá nhân hóa. Tận hưởng vẻ đẹp nguyên sơ, hệ sinh thái kỳ vĩ và ẩm thực hải sản trứ danh của ốc đảo xanh Cần Giờ.
+            </p>
+            <div class="hero-actions">
+                <a href="#itineraries" class="btn btn-primary">Khám Phá Tour Thiết Kế</a>
+                <a href="#experiences" class="btn btn-outline">Xem Các Trải Nghiệm</a>
+            </div>
+        </div>
+
+        <!-- Quick Trip Planning Bar giống Jacada -->
+        <div class="hero-planner-card">
+            <div class="planner-col">
+                <label>Sở Thích Du Lịch</label>
+                <select id="travelStyle">
+                    <option value="eco">Sinh Thái &amp; Thiên Nhiên</option>
+                    <option value="luxury">Nghỉ Dưỡng &amp; Ẩm Thực</option>
+                    <option value="adventure">Chèo SUP &amp; Khám Phá Rừng</option>
+                    <option value="family">Chuyến Đi Gia Đình Cuối Tuần</option>
+                </select>
+            </div>
+            <div class="planner-col">
+                <label>Thời Lượng</label>
+                <select id="duration">
+                    <option value="1day">Trong Ngày (1 Ngày)</option>
+                    <option value="2day">2 Ngày 1 Đêm (Cuối Tuần)</option>
+                    <option value="3day">3 Ngày 2 Đêm (Trọn Vẹn)</option>
+                </select>
+            </div>
+            <div class="planner-col">
+                <label>Số Lượng Khách</label>
+                <select id="groupSize">
+                    <option value="private">Cá Nhân / Cặp Đôi (1-2 người)</option>
+                    <option value="family">Gia Đình (3-6 người)</option>
+                    <option value="group">Nhóm Riêng (7+ người)</option>
+                </select>
+            </div>
+            <div class="planner-col planner-action">
+                <a href="#contact" class="btn btn-gold">Tư Vấn Tour Riêng</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Giới thiệu biên tập (Editorial Intro) -->
+    <section class="editorial-section" id="about">
+        <div class="container">
+            <div class="editorial-grid">
+                <div class="editorial-text">
+                    <span class="section-tag">VỀ MIỀN SINH THÁI CẦN GIỜ</span>
+                    <h2 class="section-heading">Lá Phổi Xanh Của Thành Phố Phương Nam</h2>
+                    <p class="editorial-lead">
+                        Chỉ cách trung tâm TP.HCM chưa đầy 50km, Cần Giờ là huyện đảo duy nhất giáp biển của thành phố, sở hữu hệ sinh thái rừng ngập mặn phong phú bậc nhất Đông Nam Á.
+                    </p>
+                    <p>
+                        Từ những luồn lạch quanh co phủ kín rễ đước nghìn năm, những đàn chim rợp bóng lúc hoàng hôn tại Vàm Sát, đến hương vị hải sản tươi nguyên từ chợ Hàng Dương – mỗi khoảnh khắc đều được Cần Giờ Bespoke chắt lọc thành hành trình nghỉ dưỡng đáng nhớ.
+                    </p>
+                    <div class="editorial-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">75,000+</span>
+                            <span class="stat-label">Hécta Rừng Ngập Mặn</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2000</span>
+                            <span class="stat-label">UNESCO Công Nhận</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Loài Động Thực Vật Quý</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="editorial-image-frame">
+                    <div class="image-placeholder main-story-img">
+                        <img src="Images/la-phoi-xanh.jfif" alt="Lá phổi xanh Cần Giờ">
+                        <div class="img-badge">Rừng Ngập Mặn Cần Giờ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Điểm đến đặc sắc (Curated Destinations) -->
+    <section class="section-spacing destinations-section" id="destinations">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">ĐIỂM ĐẾN NỔI BẬT</span>
+                <h2 class="section-heading">Những Tọa Độ Đáng Ghé Thăm</h2>
+                <p class="section-subheading">Từ di tích lịch sử linh thiêng đến các khu bảo tồn thiên nhiên hoang sơ</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <article class="destination-card">
+                    <div class="card-img-wrapper">
+                        <div class="image-placeholder card-img">
+                            <span class="card-tag">Sinh Thái</span>
+                            <img src="Images/VS1.jfif" alt="Khu Du Lịch Sinh Thái Vàm Sát">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Khu Du Lịch Sinh Thái Vàm Sát</h3>
+                        <p class="card-desc">Tháp Tang Bồng ngắm toàn cảnh rừng xanh, Đầm Dơi hoang dã và trảng chim tự nhiên quy tụ hàng ngàn cánh chim mùa di cư.</p>
+                        <a href="#contact" class="card-link">Tìm hiểu thêm &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="destination-card">
+                    <div class="card-img-wrapper">
+                        <div class="image-placeholder card-img">
+                            <span class="card-tag">Lịch Sử</span>
+                            <img src="Images/chien-khu.jfif" alt="Chiến Khu Rừng Sác &amp; Đảo Khỉ">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Chiến Khu Rừng Sác &amp; Đảo Khỉ</h3>
+                        <p class="card-desc">Căn cứ kháng chiến anh dũng của Trung đoàn 10 Đặc công Rừng Sác hào hùng, kết hợp thăm quần thể linh trưởng tự nhiên.</p>
+                        <a href="#contact" class="card-link">Tìm hiểu thêm &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="destination-card">
+                    <div class="card-img-wrapper">
+                        <div class="image-placeholder card-img">
+                            <span class="card-tag">Ẩm Thực</span>
+                            <img src="Images/cho-hang-duong.jpg" alt="Chợ Hải Sản Hàng Dương">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Chợ Hải Sản Hàng Dương</h3>
+                        <p class="card-desc">Thiên đường ẩm thực biển với cua ghẹ tươi rói, tôm tít, ốc hương chế biến tại chỗ đậm đà hương vị biển miền Nam.</p>
+                        <a href="#contact" class="card-link">Tìm hiểu thêm &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="destination-card">
+                    <div class="card-img-wrapper">
+                        <div class="image-placeholder card-img">
+                            <span class="card-tag">Biển &amp; Hoàng Hôn</span>
+                            <img src="Images/bien-304.jfif" alt="Bãi Biển 30/4 &amp; Cầu Nam Hải">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Bãi Biển 30/4 &amp; Cầu Nam Hải</h3>
+                        <p class="card-desc">Bãi cát sẫm phù sa đặc trưng, con đường dẫn ra biển ngắm hoàng hôn buông lơi trên vịnh Đồng Tranh thơ mộng.</p>
+                        <a href="#contact" class="card-link">Tìm hiểu thêm &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trải nghiệm đặc sắc (Bespoke Experiences) -->
+    <section class="section-spacing experiences-section" id="experiences">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">TRẢI NGHIỆM ĐỘC BẢN</span>
+                <h2 class="section-heading">Khoảnh Khắc Chỉ Có Tại Cần Giờ</h2>
+                <p class="section-subheading">Được may đo kỹ lưỡng cho những ai tìm kiếm sự tĩnh tại và kết nối sâu sắc với tự nhiên</p>
+            </div>
+
+            <div class="experiences-mosaic">
+                <div class="mosaic-item mosaic-large">
+                    <div class="image-placeholder mosaic-img">
+                        <img src="Images/cheo-sup.jpg" alt="Chèo SUP &amp; Thuyền Kayak Giữa Lạch Rừng Đước">
+                        <div class="mosaic-overlay">
+                            <span class="exp-category">Hoạt Động Nổi Bật</span>
+                            <h3>Chèo SUP &amp; Thuyền Kayak Giữa Lạch Rừng Đước</h3>
+                            <p>Luồn lách qua những con rạch tĩnh mịch, lắng nghe tiếng chim hót và hít thở không khí căng tràn ion âm.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mosaic-item">
+                    <div class="image-placeholder mosaic-img">
+                        <img src="Images/hoang-hon.jpg" alt="Bữa Tối Hoàng Hôn Trên Du Thuyền Tư Nhân">
+                        <div class="mosaic-overlay">
+                            <span class="exp-category">Nghỉ Dưỡng Cao Cấp</span>
+                            <h3>Bữa Tối Hoàng Hôn Trên Du Thuyền Tư Nhân</h3>
+                            <p>Thưởng thức hải sản chọn lọc cùng rượu vang khi ráng chiều nhuộm đỏ vịnh Cần Giờ.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mosaic-item">
+                    <div class="image-placeholder mosaic-img">
+                        <img src="Images/lam-muoi.jpg" alt="Trải Nghiệm Nghề Làm Muối &amp; Làng Chài Thiềng Liềng">
+                        <div class="mosaic-overlay">
+                            <span class="exp-category">Văn Hóa Bản Địa</span>
+                            <h3>Trải Nghiệm Nghề Làm Muối &amp; Làng Chài Thiềng Liềng</h3>
+                            <p>Khám phá ấp đảo bình yên nằm biệt lập, nơi lưu giữ nếp sống mộc mạc nguyên sơ.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lịch trình mẫu thiết kế riêng (Curated Itineraries) -->
+    <section class="section-spacing itineraries-section" id="itineraries">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">LỊCH TRÌNH THIẾT KẾ RIÊNG</span>
+                <h2 class="section-heading">Các Hành Trình Gợi Ý</h2>
+                <p class="section-subheading">Mỗi hành trình đều có thể tinh chỉnh linh hoạt theo quỹ thời gian và sở thích của bạn</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="itinerary-tabs">
+                <button class="tab-btn active" data-tab="tab-1day">1 Ngày: Thoát Ly Phố Thị</button>
+                <button class="tab-btn" data-tab="tab-2day">2 Ngày 1 Đêm: Bản Giao Hưởng Sinh Thái</button>
+                <button class="tab-btn" data-tab="tab-3day">3 Ngày 2 Đêm: Trọn Vẹn Đảo Cần Giờ</button>
+            </div>
+
+            <!-- Tab Content 1 -->
+            <div class="tab-pane active" id="tab-1day">
+                <div class="itinerary-box">
+                    <div class="itinerary-media">
+                        <div class="image-placeholder itin-img">
+                            <span class="itin-badge">1 Ngày / Khởi hành hằng ngày</span>
+                            <img src="Images/1-ngay.jpg" alt="1 Ngày: Thoát Ly Phố Thị">
+                        </div>
+                    </div>
+                    <div class="itinerary-details">
+                        <div class="itin-header">
+                            <h3>Eco Escape: Thức Tỉnh Năng Lượng Rừng Sác</h3>
+                            <span class="itin-price">Chuyến đi riêng tư</span>
+                        </div>
+                        <ul class="itinerary-timeline">
+                            <li>
+                                <strong>07:30 - 09:00:</strong> Đón khách bằng xe cao cấp từ trung tâm Sài Gòn qua phà Bình Khánh.
+                            </li>
+                            <li>
+                                <strong>09:30 - 12:00:</strong> Đi ca-nô len lỏi vào rừng ngập mặn Vàm Sát, chèo thuyền nan ngắm Đầm Dơi.
+                            </li>
+                            <li>
+                                <strong>12:30 - 14:00:</strong> Tiệc trưa hải sản tươi sống phong vị bản địa tại nhà hàng ven sông.
+                            </li>
+                            <li>
+                                <strong>14:30 - 16:30:</strong> Dạo bước trên cầu Nam Hải ngắm biển 30/4, thưởng thức dừa nước Cần Giờ mát lạnh.
+                            </li>
+                            <li>
+                                <strong>17:00:</strong> Xe đưa đoàn về lại trung tâm thành phố.
+                            </li>
+                        </ul>
+                        <div class="itin-actions">
+                            <a href="#contact" class="btn btn-primary">Yêu Cầu Tùy Biến Lịch Trình Này</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content 2 -->
+            <div class="tab-pane" id="tab-2day">
+                <div class="itinerary-box">
+                    <div class="itinerary-media">
+                        <div class="image-placeholder itin-img">
+                            <span class="itin-badge">2 Ngày 1 Đêm / Cuối tuần lý tưởng</span>
+                            <img src="Images/2-ngay-1-dem.jfif" alt="2 Ngày 1 Đêm: Bản Giao Hưởng Sinh Thái">
+                        </div>
+                    </div>
+                    <div class="itinerary-details">
+                        <div class="itin-header">
+                            <h3>Coastal &amp; Wellness: Chữa Lành Nơi Ốc Đảo</h3>
+                            <span class="itin-price">Nghỉ dưỡng &amp; Thiên nhiên</span>
+                        </div>
+                        <ul class="itinerary-timeline">
+                            <li>
+                                <strong>Ngày 1:</strong> Khởi hành đến resort ven rừng ngập mặn, thiền trà, chèo SUP hoàng hôn &amp; tiệc BBQ hải sản tối.
+                            </li>
+                            <li>
+                                <strong>Ngày 2:</strong> Đón bình minh biển Cần Giờ, đi thuyền gỗ ra ấp đảo Thiềng Liềng, thưởng thức đờn ca tài tử và thư giãn với ngâm chân thảo dược muối Cần Giờ.
+                            </li>
+                        </ul>
+                        <div class="itin-actions">
+                            <a href="#contact" class="btn btn-primary">Yêu Cầu Tùy Biến Lịch Trình Này</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content 3 -->
+            <div class="tab-pane" id="tab-3day">
+                <div class="itinerary-box">
+                    <div class="itinerary-media">
+                        <div class="image-placeholder itin-img">
+                            <span class="itin-badge">3 Ngày 2 Đêm / Trải nghiệm chuyên sâu</span>
+                            <img src="Images/3-ngay-2-dem.jfif" alt="3 Ngày 2 Đêm: Trọn Vẹn Đảo Cần Giờ">
+                        </div>
+                    </div>
+                    <div class="itinerary-details">
+                        <div class="itin-header">
+                            <h3>Deep Mangrove Expedition: Thám Hiểm Rừng Sâu</h3>
+                            <span class="itin-price">Dành cho người yêu sinh thái</span>
+                        </div>
+                        <ul class="itinerary-timeline">
+                            <li>
+                                <strong>Ngày 1:</strong> Khám phá sâu vùng lõi sinh quyển, quan sát động vật hoang dã cùng chuyên gia bảo tồn.
+                            </li>
+                            <li>
+                                <strong>Ngày 2:</strong> Trải nghiệm một ngày làm ngư dân: giăng lưới bắt cua, cào nghêu bãi bồi Long Hòa.
+                            </li>
+                            <li>
+                                <strong>Ngày 3:</strong> Tìm hiểu văn hóa di tích khảo cổ Giồng Phệt - Giồng Cá Vồ và mua sắm đặc sản yến sào Cần Giờ.
+                            </li>
+                        </ul>
+                        <div class="itin-actions">
+                            <a href="#contact" class="btn btn-primary">Yêu Cầu Tùy Biến Lịch Trình Này</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Cảm nhận khách du lịch (Jacada style) -->
+    <section class="section-spacing testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="quote-container text-center">
+                <span class="quote-icon">&ldquo;</span>
+                <blockquote class="testimonial-quote">
+                    "Một chuyến đi hoàn toàn làm tôi bất ngờ. Không ngờ ngay sát Sài Gòn lại có một không gian thiên nhiên tĩnh lặng và nguyên sơ đến thế. Dịch vụ chu đáo, hải sản tuyệt vời và trải nghiệm chèo thuyền giữa rừng đước lúc bình minh là kỷ niệm tôi không bao giờ quên."
+                </blockquote>
+                <div class="quote-author">
+                    <strong>Nguyễn Phúc Khai Tâm &amp; Ổ Snake</strong>
+                    <span>Sinh Viên UTC2 &bull; Chuyến đi 2N1Đ Cần Giờ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form tư vấn may đo chuyến đi (Enquiry Form) -->
+    <section class="section-spacing contact-section" id="contact">
+        <div class="container">
+            <div class="contact-card">
+                <div class="contact-header text-center">
+                    <span class="section-tag">LIÊN HỆ THIẾT KẾ TOUR</span>
+                    <h2 class="section-heading">Bắt Đầu Chuyến Đi Của Riêng Bạn</h2>
+                    <p>Hãy chia sẻ với chúng tôi về kỳ nghỉ mơ ước của bạn tại Cần Giờ, chuyên viên lữ hành sẽ liên hệ tư vấn trong 24 giờ.</p>
+                </div>
+
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Họ và tên *</label>
+                            <input type="text" id="fullName" placeholder="Ví dụ: Nguyễn Văn A" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Địa chỉ Email *</label>
+                            <input type="email" id="email" placeholder="email@domain.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại *</label>
+                            <input type="tel" id="phone" placeholder="0901 234 567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="travelDate">Thời gian dự kiến</label>
+                            <input type="date" id="travelDate">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tourInterest">Phong cách quan tâm</label>
+                            <select id="tourInterest">
+                                <option>Tour Sinh thái &amp; Chèo SUP Vàm Sát</option>
+                                <option>Nghỉ dưỡng cuối tuần &amp; Hải sản chợ Hàng Dương</option>
+                                <option>Khám phá văn hóa đảo Thiềng Liềng</option>
+                                <option>Thiết kế tour riêng theo yêu cầu</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Số lượng người</label>
+                            <input type="number" id="guests" min="1" max="50" value="2">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Ghi chú hoặc mong muốn đặc biệt</label>
+                        <textarea id="message" rows="4" placeholder="Bạn có yêu cầu riêng về chế độ ăn uống, địa điểm đón, dịch vụ chụp ảnh hay sở thích nào khác không?"></textarea>
+                    </div>
+
+                    <div class="form-submit text-center">
+                        <button type="submit" class="btn btn-primary btn-submit">Gửi Yêu Cầu Tư Vấn</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer thanh lịch chuẩn Jacada Travel -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <h3>CẦN GIỜ BESPOKE</h3>
+                    <p>Chuyên thiết kế các chuyến du lịch sinh thái, khám phá và nghỉ dưỡng cao cấp tại Huyện đảo Cần Giờ, Thành phố Hồ Chí Minh.</p>
+                    <div class="footer-contact-info">
+                        <p><strong>Hotline:</strong> 1900 xxxx / 0900 xxx xxx</p>
+                        <p><strong>Email:</strong> bespoke@cangiotravel.vn</p>
+                        <p><strong>Địa chỉ:</strong> Huyện Cần Giờ, TP. Hồ Chí Minh, Việt Nam</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Khám Phá Cần Giờ</h4>
+                    <ul>
+                        <li><a href="gioithieu.html">Tổng quan Địa lý &amp; Lịch sử</a></li>
+                        <li><a href="#destinations">Khu sinh thái Vàm Sát</a></li>
+                        <li><a href="#destinations">Chiến khu Rừng Sác</a></li>
+                        <li><a href="#destinations">Chợ Hải sản Hàng Dương</a></li>
+                        <li><a href="#destinations">Đảo Khỉ &amp; Cầu Nam Hải</a></li>
+                        <li><a href="#destinations">Ấp đảo Thiềng Liềng</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Hành Trình &amp; Dịch Vụ</h4>
+                    <ul>
+                        <li><a href="#itineraries">Tour 1 Ngày Trong Tuần</a></li>
+                        <li><a href="#itineraries">Nghỉ Dưỡng Cuối Tuần 2N1Đ</a></li>
+                        <li><a href="#experiences">Chèo SUP Rừng Đước</a></li>
+                        <li><a href="#experiences">Du Thuyền Hoàng Hôn</a></li>
+                        <li><a href="#contact">Tư Vấn Tour Doanh Nghiệp</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Đăng Ký Nhận Bản Tin</h4>
+                    <p>Nhận cẩm nang du lịch Cần Giờ và các ưu đãi mùa sinh thái mới nhất.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Nhập địa chỉ email của bạn..." required>
+                        <button type="submit">Đăng Ký</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cần Giờ Bespoke Journeys. Bản quyền thuộc về đề tài Thực hành Thiết Kế Web.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Chính Sách Bảo Mật</a>
+                    <a href="#">Điều Khoản Dịch Vụ</a>
+                    <a href="#">Sơ Đồ Trang</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script tương tác -->
+    <script src="Scripts/main.js"></script>
+</body>
+</html>
