@@ -2188,6 +2188,269 @@ img {
     color: var(--primary-color);
 }
 
+/* ========================================================
+   CHI TIẾT 4 NGHI THỨC LỄ HỘI NGHINH ÔNG & CAROUSEL SLIDER
+   ======================================================== */
+.btn-ritual-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 7px 18px;
+    background: #FFFDF9;
+    color: var(--primary-color);
+    border: 1.5px solid var(--accent-gold);
+    border-radius: 24px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-ritual-toggle:hover,
+.btn-ritual-toggle.active {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(26, 54, 42, 0.22);
+}
+
+.ritual-details-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 24px;
+    background: #FAF7F2;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    border-radius: 6px;
+    animation: ritualFadeIn 0.35s ease forwards;
+}
+
+@keyframes ritualFadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ritual-details-intro {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed rgba(197, 160, 89, 0.45);
+}
+
+.ritual-details-intro h4 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+}
+
+.ritual-details-intro p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.ritual-tabs-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.ritual-tab-pill {
+    padding: 6px 14px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ritual-tab-pill:hover,
+.ritual-tab-pill.active {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    border-color: var(--primary-color);
+}
+
+.rituals-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ritual-card-item {
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.ritual-card-content {
+    padding: 18px 20px 14px;
+}
+
+.ritual-card-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 4px;
+}
+
+.ritual-card-heading {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.ritual-card-text {
+    font-size: 0.88rem;
+    color: #4A5568;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.ritual-slider-frame {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #1A202C;
+    user-select: none;
+}
+
+.ritual-slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ritual-slide {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ritual-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ritual-slide-counter {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #FFFFFF;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    z-index: 3;
+}
+
+.ritual-slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    padding: 24px 14px 10px;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.ritual-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ritual-nav-btn:hover {
+    background: #FFFFFF;
+    transform: translateY(-50%) scale(1.1);
+    color: #000000;
+}
+
+.ritual-nav-btn.prev {
+    left: 10px;
+}
+
+.ritual-nav-btn.next {
+    right: 10px;
+}
+
+.ritual-dots-bar {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 4;
+}
+
+.ritual-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.ritual-dot.active {
+    background: #FFFFFF;
+    width: 22px;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .ritual-slider-frame {
+        height: 220px;
+    }
+    .ritual-details-container {
+        padding: 16px 12px;
+    }
+    .ritual-card-content {
+        padding: 14px 12px 10px;
+    }
+}
+
 @media (max-width: 992px) {
     .festival-card,
     .festival-card-reverse {

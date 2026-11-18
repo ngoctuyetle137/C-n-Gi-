@@ -98,6 +98,175 @@
                         <ul class="activity-list">
                             <li>
                                 <strong>Phần Lễ trang nghiêm:</strong> Lễ Thượng Kỳ, Lễ Cầu An, Lễ Cúng Tiền Hiền - Hậu Hiền và đỉnh cao là <em>Lễ Nghinh Ông trên biển</em> với hàng trăm đoàn ghe, tàu cá kết hoa đăng rực rỡ cùng cờ hoa lộng lẫy xuất phát từ thị trấn Cần Thạnh hộ tống đoàn ra khơi rước linh thần.
+                                <div>
+                                    <button type="button" class="btn-ritual-toggle" id="btnToggleRituals" onclick="toggleRitualBox()">
+                                        <span>📜 Xem Chi Tiết 4 Phần Nghi Lễ &amp; Lướt Ảnh</span> &darr;
+                                    </button>
+                                </div>
+
+                                <!-- Khung Chi Tiết 4 Phần Nghi Lễ (Mỗi phần 3 ảnh trong 1 khung) -->
+                                <div class="ritual-details-container" id="ritualDetailsBox" style="display: none;">
+                                    <div class="ritual-details-intro">
+                                        <span class="ritual-card-tag">CHI TIẾT PHẦN LỄ TRANG NGHIÊM</span>
+                                        <h4>4 Nghi Thức Trọng Thể Trong Lễ Hội Nghinh Ông</h4>
+                                        <p>Mỗi phần được gói gọn trong 1 khung lướt ảnh riêng — bạn có thể bấm mũi tên &lsaquo; &rsaquo;, bấm chấm tròn hoặc vuốt ngang để lướt xem lần lượt 3 bức ảnh của từng nghi thức.</p>
+                                    </div>
+
+                                    <!-- Thanh chọn tab 4 phần -->
+                                    <div class="ritual-tabs-bar">
+                                        <button type="button" class="ritual-tab-pill active" data-tab-target="all" onclick="switchRitualTab('all')">Tất Cả 4 Phần</button>
+                                        <button type="button" class="ritual-tab-pill" data-tab-target="vieng" onclick="switchRitualTab('vieng')">1. Viếng &amp; Dâng Hương</button>
+                                        <button type="button" class="ritual-tab-pill" data-tab-target="thuongky" onclick="switchRitualTab('thuongky')">2. Thượng Đại Kỳ</button>
+                                        <button type="button" class="ritual-tab-pill" data-tab-target="nghinhong" onclick="switchRitualTab('nghinhong')">3. Nghinh Ông Trên Biển</button>
+                                        <button type="button" class="ritual-tab-pill" data-tab-target="cungte" onclick="switchRitualTab('cungte')">4. Cúng Tế &amp; Mừng Công</button>
+                                    </div>
+
+                                    <div class="rituals-stack">
+                                        <!-- Phần 1: Lễ viếng và dâng hương -->
+                                        <div class="ritual-card-item" data-ritual-key="vieng">
+                                            <div class="ritual-card-content">
+                                                <span class="ritual-card-tag">Nghi Thức 01</span>
+                                                <h4 class="ritual-card-heading">1. Lễ viếng và dâng hương</h4>
+                                                <p class="ritual-card-text">
+                                                    Đoàn đại biểu cùng người dân địa phương dâng hoa, thắp hương tưởng niệm các Anh hùng liệt sĩ tại Nghĩa trang Liệt sĩ Rừng Sác và Đền thờ Anh hùng liệt sĩ trước khi bước vào các nghi thức chính.
+                                                </p>
+                                            </div>
+                                            <!-- Khung lướt ảnh Phần 1 -->
+                                            <div class="ritual-slider-frame" data-slider="vieng">
+                                                <span class="ritual-slide-counter">1 / 3</span>
+                                                <div class="ritual-slider-track">
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/vieng-1.jfif" alt="Lễ viếng và dâng hương ảnh 1">
+                                                        <div class="ritual-slide-caption">Ảnh 1/3: Đoàn đại biểu và nhân dân dâng hoa viếng Nghĩa trang Liệt sĩ Rừng Sác</div>
+                                                    </div>
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/vieng-2.jfif" alt="Lễ viếng và dâng hương ảnh 2">
+                                                        <div class="ritual-slide-caption">Ảnh 2/3: Thắp nén tâm hương tri ân các anh hùng liệt sĩ đặc công Rừng Sác</div>
+                                                    </div>
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/vieng-3.jfif" alt="Lễ viếng và dâng hương ảnh 3">
+                                                        <div class="ritual-slide-caption">Ảnh 3/3: Nghi lễ viếng trang nghiêm tại Đền thờ Anh hùng liệt sĩ trước giờ khai hội</div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="ritual-nav-btn prev" onclick="moveRitualSlide('vieng', -1)" aria-label="Ảnh trước">&#10094;</button>
+                                                <button type="button" class="ritual-nav-btn next" onclick="moveRitualSlide('vieng', 1)" aria-label="Ảnh tiếp theo">&#10095;</button>
+                                                <div class="ritual-dots-bar">
+                                                    <span class="ritual-dot active" onclick="setRitualSlide('vieng', 0)"></span>
+                                                    <span class="ritual-dot" onclick="setRitualSlide('vieng', 1)"></span>
+                                                    <span class="ritual-dot" onclick="setRitualSlide('vieng', 2)"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Phần 2: Lễ thượng đại kỳ -->
+                                        <div class="ritual-card-item" data-ritual-key="thuongky">
+                                            <div class="ritual-card-content">
+                                                <span class="ritual-card-tag">Nghi Thức 02</span>
+                                                <h4 class="ritual-card-heading">2. Lễ thượng đại kỳ</h4>
+                                                <p class="ritual-card-text">
+                                                    Nghi thức rước cờ ngũ sắc khổng lồ và kéo đại kỳ lên cột cờ trung tâm trong tiếng trống hội rộn rã, chính thức đánh dấu thời khắc khai hội.
+                                                </p>
+                                            </div>
+                                            <!-- Khung lướt ảnh Phần 2 -->
+                                            <div class="ritual-slider-frame" data-slider="thuongky">
+                                                <span class="ritual-slide-counter">1 / 3</span>
+                                                <div class="ritual-slider-track">
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/thuong-dai-ky-1.jfif" alt="Lễ thượng đại kỳ ảnh 1">
+                                                        <div class="ritual-slide-caption">Ảnh 1/3: Rước đại kỳ ngũ sắc khổng lồ trang trọng trong tiếng trống hội rộn rã</div>
+                                                    </div>
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/thuong-dai-ky-2.jfif" alt="Lễ thượng đại kỳ ảnh 2">
+                                                        <div class="ritual-slide-caption">Ảnh 2/3: Nghi thức kéo đại kỳ lên đỉnh cột cờ trung tâm thị trấn Cần Thạnh</div>
+                                                    </div>
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/thuong-dai-ky-3.jfif" alt="Lễ thượng đại kỳ ảnh 3">
+                                                        <div class="ritual-slide-caption">Ảnh 3/3: Đại kỳ tung bay trên biển trời quê hương, chính thức đánh dấu thời khắc khai hội</div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="ritual-nav-btn prev" onclick="moveRitualSlide('thuongky', -1)" aria-label="Ảnh trước">&#10094;</button>
+                                                <button type="button" class="ritual-nav-btn next" onclick="moveRitualSlide('thuongky', 1)" aria-label="Ảnh tiếp theo">&#10095;</button>
+                                                <div class="ritual-dots-bar">
+                                                    <span class="ritual-dot active" onclick="setRitualSlide('thuongky', 0)"></span>
+                                                    <span class="ritual-dot" onclick="setRitualSlide('thuongky', 1)"></span>
+                                                    <span class="ritual-dot" onclick="setRitualSlide('thuongky', 2)"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Phần 3: Lễ Nghinh Ông trên biển -->
+                                        <div class="ritual-card-item" data-ritual-key="nghinhong">
+                                            <div class="ritual-card-content">
+                                                <span class="ritual-card-tag">Nghi Thức 03</span>
+                                                <h4 class="ritual-card-heading">3. Lễ Nghinh Ông trên biển</h4>
+                                                <p class="ritual-card-text">
+                                                    Hàng trăm ghe, tàu đánh cá được trang trí cờ hoa rực rỡ nối đuôi nhau diễu hành ra khơi để thực hiện nghi thức rước Thần Nam Hải (Cá Ông) về Lăng Ông Thủy Tướng.
+                                                </p>
+                                            </div>
+                                            <!-- Khung lướt ảnh Phần 3 -->
+                                            <div class="ritual-slider-frame" data-slider="nghinhong">
+                                                <span class="ritual-slide-counter">1 / 3</span>
+                                                <div class="ritual-slider-track">
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/nghinh-ong-bien-1.jfif" alt="Lễ Nghinh Ông trên biển ảnh 1">
+                                                        <div class="ritual-slide-caption">Ảnh 1/3: Hàng trăm tàu thuyền đánh cá kết hoa rực rỡ nối đuôi nhau diễu hành ra khơi</div>
+                                                    </div>
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/nghinh-ong-bien-2.jfif" alt="Lễ Nghinh Ông trên biển ảnh 2">
+                                                        <div class="ritual-slide-caption">Ảnh 2/3: Nghi lễ rước Thần Nam Hải trang nghiêm giữa vùng biển "tam giang khẩu"</div>
+                                                    </div>
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/nghinh-ong-bien-3.jfif" alt="Lễ Nghinh Ông trên biển ảnh 3">
+                                                        <div class="ritual-slide-caption">Ảnh 3/3: Đoàn ghe hộ tống rước lộc Cá Ông an toàn trở về Lăng Ông Thủy Tướng</div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="ritual-nav-btn prev" onclick="moveRitualSlide('nghinhong', -1)" aria-label="Ảnh trước">&#10094;</button>
+                                                <button type="button" class="ritual-nav-btn next" onclick="moveRitualSlide('nghinhong', 1)" aria-label="Ảnh tiếp theo">&#10095;</button>
+                                                <div class="ritual-dots-bar">
+                                                    <span class="ritual-dot active" onclick="setRitualSlide('nghinhong', 0)"></span>
+                                                    <span class="ritual-dot" onclick="setRitualSlide('nghinhong', 1)"></span>
+                                                    <span class="ritual-dot" onclick="setRitualSlide('nghinhong', 2)"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Phần 4: Lễ cúng tế và Mừng công -->
+                                        <div class="ritual-card-item" data-ritual-key="cungte">
+                                            <div class="ritual-card-content">
+                                                <span class="ritual-card-tag">Nghi Thức 04</span>
+                                                <h4 class="ritual-card-heading">4. Lễ cúng tế và Mừng công</h4>
+                                                <p class="ritual-card-text">
+                                                    Các bô lão thực hiện nghi thức dâng hương cúng tiền hiền, hậu hiền, bạn cũ lái xưa tại Lăng Ông, kết hợp cùng chương trình Lễ Mừng công nhằm tôn vinh thành quả lao động của ngư dân.
+                                                </p>
+                                            </div>
+                                            <!-- Khung lướt ảnh Phần 4 -->
+                                            <div class="ritual-slider-frame" data-slider="cungte">
+                                                <span class="ritual-slide-counter">1 / 3</span>
+                                                <div class="ritual-slider-track">
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/cung-te-1.jfif" alt="Lễ cúng tế và Mừng công ảnh 1">
+                                                        <div class="ritual-slide-caption">Ảnh 1/3: Các bậc bô lão thực hiện nghi thức dâng hương cúng tiền hiền, hậu hiền tại Lăng Ông</div>
+                                                    </div>
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/cung-te-2.jfif" alt="Lễ cúng tế và Mừng công ảnh 2">
+                                                        <div class="ritual-slide-caption">Ảnh 2/3: Lễ tế trang trọng tạ ơn bạn cũ lái xưa và cầu quốc thái dân an</div>
+                                                    </div>
+                                                    <div class="ritual-slide">
+                                                        <img src="Images/nghinh_ong/cung-te-3.jfif" alt="Lễ cúng tế và Mừng công ảnh 3">
+                                                        <div class="ritual-slide-caption">Ảnh 3/3: Chương trình Lễ Mừng công tôn vinh tinh thần lao động cần cù của bà con ngư dân</div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="ritual-nav-btn prev" onclick="moveRitualSlide('cungte', -1)" aria-label="Ảnh trước">&#10094;</button>
+                                                <button type="button" class="ritual-nav-btn next" onclick="moveRitualSlide('cungte', 1)" aria-label="Ảnh tiếp theo">&#10095;</button>
+                                                <div class="ritual-dots-bar">
+                                                    <span class="ritual-dot active" onclick="setRitualSlide('cungte', 0)"></span>
+                                                    <span class="ritual-dot" onclick="setRitualSlide('cungte', 1)"></span>
+                                                    <span class="ritual-dot" onclick="setRitualSlide('cungte', 2)"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <strong>Phần Hội rộn ràng:</strong> Chuỗi trò chơi dân gian miền biển (bắt vịt nước, đua thuyền nan, đập niêu, đi cà kheo), biểu diễn hát Bả Trạo truyền thống, lễ hội rước đèn Trung thu thiếu nhi, không gian ẩm thực hải sản Cần Giờ và những đêm Đờn ca tài tử Nam Bộ sâu lắng.

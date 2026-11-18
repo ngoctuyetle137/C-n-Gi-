@@ -465,3 +465,108 @@ function setupReviewsWithAuth() {
         }
     }
 }
+
+// ========================================================
+// 11. CHI TIẾT 4 PHẦN NGHI LỄ NGHINH ÔNG & CAROUSEL SLIDER (lehoi.html)
+// ========================================================
+window.toggleRitualBox = function () {
+    const box = document.getElementById('ritualDetailsBox');
+    const btn = document.getElementById('btnToggleRituals');
+    if (!box || !btn) return;
+
+    if (box.style.display === 'none' || !box.style.display) {
+        box.style.display = 'block';
+        btn.classList.add('active');
+        btn.innerHTML = '<span>✕ Thu Gọn Chi Tiết Nghi Lễ</span>';
+        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+        box.style.display = 'none';
+        btn.classList.remove('active');
+        btn.innerHTML = '<span>📜 Xem Chi Tiết 4 Phần Nghi Lễ &amp; Lướt Ảnh</span> &darr;';
+    }
+};
+
+const ritualSliderState = {
+    vieng: 0,
+    thuongky: 0,
+    nghinhong: 0,
+    cungte: 0
+};
+
+window.moveRitualSlide = function (sliderKey, step) {
+    const frame = document.querySelector(`.ritual-slider-frame[data-slider="${sliderKey}"]`);
+    if (!frame) return;
+    const slides = frame.querySelectorAll('.ritual-slide');
+    const total = slides.length;
+    if (total === 0) return;
+
+    ritualSliderState[sliderKey] = (ritualSliderState[sliderKey] + step + total) % total;
+    updateRitualSlider(sliderKey);
+};
+
+window.setRitualSlide = function (sliderKey, index) {
+    ritualSliderState[sliderKey] = index;
+    updateRitualSlider(sliderKey);
+};
+
+function updateRitualSlider(sliderKey) {
+    const frame = document.querySelector(`.ritual-slider-frame[data-slider="${sliderKey}"]`);
+    if (!frame) return;
+    const track = frame.querySelector('.ritual-slider-track');
+    const dots = frame.querySelectorAll('.ritual-dot');
+    const counter = frame.querySelector('.ritual-slide-counter');
+    const current = ritualSliderState[sliderKey] || 0;
+
+    if (track) {
+        track.style.transform = `translateX(-${current * 100}%)`;
+    }
+    dots.forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+    });
+    if (counter) {
+        counter.textContent = `${current + 1} / 3`;
+    }
+}
+
+window.switchRitualTab = function (tabKey) {
+    const tabs = document.querySelectorAll('.ritual-tab-pill');
+    const cards = document.querySelectorAll('.ritual-card-item');
+
+    tabs.forEach(t => {
+        if (t.getAttribute('data-tab-target') === tabKey) {
+            t.classList.add('active');
+        } else {
+            t.classList.remove('active');
+        }
+    });
+
+    cards.forEach(card => {
+        if (tabKey === 'all' || card.getAttribute('data-ritual-key') === tabKey) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+};
+
+// Touch swipe gestures for all ritual sliders
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.ritual-slider-frame').forEach(frame => {
+        let startX = 0;
+        let endX = 0;
+        const key = frame.getAttribute('data-slider');
+
+        frame.addEventListener('touchstart', function (e) {
+            startX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        frame.addEventListener('touchend', function (e) {
+            endX = e.changedTouches[0].screenX;
+            if (startX - endX > 35) {
+                moveRitualSlide(key, 1);
+            } else if (endX - startX > 35) {
+                moveRitualSlide(key, -1);
+            }
+        }, { passive: true });
+    });
+});
