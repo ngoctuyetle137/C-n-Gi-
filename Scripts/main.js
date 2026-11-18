@@ -472,17 +472,18 @@ function setupReviewsWithAuth() {
 window.toggleRitualBox = function () {
     const box = document.getElementById('ritualDetailsBox');
     const btn = document.getElementById('btnToggleRituals');
+    const card = document.getElementById('nghinh-ong');
     if (!box || !btn) return;
 
-    if (box.style.display === 'none' || !box.style.display) {
+    const isHidden = (box.style.display === 'none' || !box.style.display);
+    if (isHidden) {
         box.style.display = 'block';
-        btn.classList.add('active');
-        btn.innerHTML = '<span>✕ Thu Gọn Chi Tiết Nghi Lễ</span>';
-        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (card) card.classList.add('is-expanded');
+        btn.innerHTML = 'Thu gọn &uarr;';
     } else {
         box.style.display = 'none';
-        btn.classList.remove('active');
-        btn.innerHTML = '<span>📜 Xem Chi Tiết 4 Phần Nghi Lễ &amp; Lướt Ảnh</span> &darr;';
+        if (card) card.classList.remove('is-expanded');
+        btn.innerHTML = 'Xem chi tiết &darr;';
     }
 };
 

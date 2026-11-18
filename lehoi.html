@@ -100,32 +100,16 @@
                                 <strong>Phần Lễ trang nghiêm:</strong> Lễ Thượng Kỳ, Lễ Cầu An, Lễ Cúng Tiền Hiền - Hậu Hiền và đỉnh cao là <em>Lễ Nghinh Ông trên biển</em> với hàng trăm đoàn ghe, tàu cá kết hoa đăng rực rỡ cùng cờ hoa lộng lẫy xuất phát từ thị trấn Cần Thạnh hộ tống đoàn ra khơi rước linh thần.
                                 <div>
                                     <button type="button" class="btn-ritual-toggle" id="btnToggleRituals" onclick="toggleRitualBox()">
-                                        <span>📜 Xem Chi Tiết 4 Phần Nghi Lễ &amp; Lướt Ảnh</span> &darr;
+                                        Xem chi tiết &darr;
                                     </button>
                                 </div>
 
                                 <!-- Khung Chi Tiết 4 Phần Nghi Lễ (Mỗi phần 3 ảnh trong 1 khung) -->
                                 <div class="ritual-details-container" id="ritualDetailsBox" style="display: none;">
-                                    <div class="ritual-details-intro">
-                                        <span class="ritual-card-tag">CHI TIẾT PHẦN LỄ TRANG NGHIÊM</span>
-                                        <h4>4 Nghi Thức Trọng Thể Trong Lễ Hội Nghinh Ông</h4>
-                                        <p>Mỗi phần được gói gọn trong 1 khung lướt ảnh riêng — bạn có thể bấm mũi tên &lsaquo; &rsaquo;, bấm chấm tròn hoặc vuốt ngang để lướt xem lần lượt 3 bức ảnh của từng nghi thức.</p>
-                                    </div>
-
-                                    <!-- Thanh chọn tab 4 phần -->
-                                    <div class="ritual-tabs-bar">
-                                        <button type="button" class="ritual-tab-pill active" data-tab-target="all" onclick="switchRitualTab('all')">Tất Cả 4 Phần</button>
-                                        <button type="button" class="ritual-tab-pill" data-tab-target="vieng" onclick="switchRitualTab('vieng')">1. Viếng &amp; Dâng Hương</button>
-                                        <button type="button" class="ritual-tab-pill" data-tab-target="thuongky" onclick="switchRitualTab('thuongky')">2. Thượng Đại Kỳ</button>
-                                        <button type="button" class="ritual-tab-pill" data-tab-target="nghinhong" onclick="switchRitualTab('nghinhong')">3. Nghinh Ông Trên Biển</button>
-                                        <button type="button" class="ritual-tab-pill" data-tab-target="cungte" onclick="switchRitualTab('cungte')">4. Cúng Tế &amp; Mừng Công</button>
-                                    </div>
-
-                                    <div class="rituals-stack">
+                                    <div class="rituals-grid">
                                         <!-- Phần 1: Lễ viếng và dâng hương -->
-                                        <div class="ritual-card-item" data-ritual-key="vieng">
+                                        <div class="ritual-card-item">
                                             <div class="ritual-card-content">
-                                                <span class="ritual-card-tag">Nghi Thức 01</span>
                                                 <h4 class="ritual-card-heading">1. Lễ viếng và dâng hương</h4>
                                                 <p class="ritual-card-text">
                                                     Đoàn đại biểu cùng người dân địa phương dâng hoa, thắp hương tưởng niệm các Anh hùng liệt sĩ tại Nghĩa trang Liệt sĩ Rừng Sác và Đền thờ Anh hùng liệt sĩ trước khi bước vào các nghi thức chính.
@@ -159,9 +143,8 @@
                                         </div>
 
                                         <!-- Phần 2: Lễ thượng đại kỳ -->
-                                        <div class="ritual-card-item" data-ritual-key="thuongky">
+                                        <div class="ritual-card-item">
                                             <div class="ritual-card-content">
-                                                <span class="ritual-card-tag">Nghi Thức 02</span>
                                                 <h4 class="ritual-card-heading">2. Lễ thượng đại kỳ</h4>
                                                 <p class="ritual-card-text">
                                                     Nghi thức rước cờ ngũ sắc khổng lồ và kéo đại kỳ lên cột cờ trung tâm trong tiếng trống hội rộn rã, chính thức đánh dấu thời khắc khai hội.
@@ -195,9 +178,8 @@
                                         </div>
 
                                         <!-- Phần 3: Lễ Nghinh Ông trên biển -->
-                                        <div class="ritual-card-item" data-ritual-key="nghinhong">
+                                        <div class="ritual-card-item">
                                             <div class="ritual-card-content">
-                                                <span class="ritual-card-tag">Nghi Thức 03</span>
                                                 <h4 class="ritual-card-heading">3. Lễ Nghinh Ông trên biển</h4>
                                                 <p class="ritual-card-text">
                                                     Hàng trăm ghe, tàu đánh cá được trang trí cờ hoa rực rỡ nối đuôi nhau diễu hành ra khơi để thực hiện nghi thức rước Thần Nam Hải (Cá Ông) về Lăng Ông Thủy Tướng.
@@ -231,9 +213,8 @@
                                         </div>
 
                                         <!-- Phần 4: Lễ cúng tế và Mừng công -->
-                                        <div class="ritual-card-item" data-ritual-key="cungte">
+                                        <div class="ritual-card-item">
                                             <div class="ritual-card-content">
-                                                <span class="ritual-card-tag">Nghi Thức 04</span>
                                                 <h4 class="ritual-card-heading">4. Lễ cúng tế và Mừng công</h4>
                                                 <p class="ritual-card-text">
                                                     Các bô lão thực hiện nghi thức dâng hương cúng tiền hiền, hậu hiền, bạn cũ lái xưa tại Lăng Ông, kết hợp cùng chương trình Lễ Mừng công nhằm tôn vinh thành quả lao động của ngư dân.
