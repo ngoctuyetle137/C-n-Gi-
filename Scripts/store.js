@@ -1,5 +1,5 @@
 /**
- * CẦN GIỜ BESPOKE - DATA STORE & AUTHENTICATION MANAGER (LocalStorage)
+ * CẦN GIỜ ECO-TOURISM - DATA STORE & AUTHENTICATION MANAGER (LocalStorage)
  * Quản lý CSDL client-side cho Địa điểm, Món ăn, Bài viết, Đánh giá và Phân quyền Admin
  */
 
@@ -122,7 +122,7 @@ const DEFAULT_DATA = {
         {
             id: 'a_1',
             title: 'Kinh Nghiệm Khám Phá Rừng Ngập Mặn Cần Giờ Từ A Đến Z',
-            author: 'Ban Biên Tập Cần Giờ Bespoke',
+            author: 'Ban Biên Tập Du Lịch Cần Giờ',
             date: '18/11/2026',
             image: 'Images/la-phoi-xanh.jfif',
             summary: 'Tất tần tật phương tiện di chuyển qua phà Bình Khánh, lộ trình săn ảnh đẹp và địa điểm ăn uống ngon bổ rẻ.'

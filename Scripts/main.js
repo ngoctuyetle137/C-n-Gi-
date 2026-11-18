@@ -1,5 +1,5 @@
 /**
- * CẦN GIỜ BESPOKE JOURNEYS - MAIN JAVASCRIPT
+ * CẦN GIỜ ECO-TOURISM - MAIN JAVASCRIPT
  * Tương tác giao diện phong cách Jacada Travel, Bản Đồ Google Maps & Quản Lý Đăng Nhập
  */
 
@@ -427,7 +427,7 @@ function setupReviewsWithAuth() {
                 <form id="authReviewForm" style="max-width: 680px; margin: 0 auto;">
                     <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; margin-bottom: 16px;">
                         <div>
-                            <label style="display:block; font-size:0.8rem; font-weight:600; text-transform:uppercase; margin-bottom:6px; color:var(--primary-color);">Địa điểm / Tour trải nghiệm *</label>
+                            <label style="display:block; font-size:0.8rem; font-weight:600; text-transform:uppercase; margin-bottom:6px; color:var(--primary-color);">Địa điểm / Chuyến tham quan *</label>
                             <input type="text" id="revPlace" required placeholder="Ví dụ: Rừng Vàm Sát, Chợ Hàng Dương..." style="width:100%; padding:10px 14px; border:1px solid var(--border-subtle); border-radius:2px; font-size:0.9rem;">
                         </div>
                         <div>
