@@ -2206,3 +2206,212 @@ img {
         min-height: 300px;
     }
 }
+
+/* ========================================================
+   AUTH WIDGET & MODAL IN NAVBAR
+   ======================================================== */
+.nav-auth-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 6px;
+}
+
+.btn-nav-auth {
+    background: transparent;
+    border: 1px solid var(--accent-gold);
+    color: var(--primary-color) !important;
+    padding: 6px 12px !important;
+    border-radius: 2px;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    white-space: nowrap !important;
+    transition: var(--transition-smooth);
+}
+
+.btn-nav-auth:hover {
+    background: var(--accent-gold);
+    color: #FFFFFF !important;
+}
+
+.btn-nav-admin {
+    background: #1A3026 !important;
+    color: var(--accent-gold) !important;
+    border: 1px solid var(--accent-gold) !important;
+    font-weight: 700 !important;
+}
+
+.user-nav-dropdown {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+.btn-logout-small {
+    background: none;
+    border: none;
+    color: #E53E3E;
+    font-size: 0.72rem;
+    cursor: pointer;
+    padding: 2px 4px;
+    text-decoration: underline;
+}
+
+/* Card Actions with Maps */
+.card-footer-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+.btn-card-map {
+    background: transparent;
+    border: 1px solid #CBD5E0;
+    color: #2B6CB0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-card-map:hover {
+    background: #EBF8FF;
+    border-color: #3182CE;
+}
+
+/* Global Auth & Maps Modal */
+.cg-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 25, 18, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cg-modal-overlay.open {
+    display: flex;
+}
+
+.cg-modal-content {
+    background: #FFFFFF;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cg-modal-header {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cg-modal-header h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.cg-modal-close {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.6rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.cg-modal-body {
+    padding: 24px;
+}
+
+.auth-tabs-toggle {
+    display: flex;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 20px;
+}
+
+.auth-tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+.auth-tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--accent-gold);
+}
+
+.auth-form-group {
+    margin-bottom: 14px;
+}
+
+.auth-form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.auth-form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #CBD5E0;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-family: var(--font-body);
+}
+
+.btn-auth-action {
+    width: 100%;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.btn-auth-action:hover {
+    background: var(--accent-gold);
+}
