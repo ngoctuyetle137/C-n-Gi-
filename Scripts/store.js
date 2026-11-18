@@ -72,6 +72,33 @@ const DEFAULT_DATA = {
             image: 'Images/lichsu/1822.png',
             mapUrl: 'https://maps.google.com/maps?q=L%C4%83ng+%C3%94ng+Th%E1%BB%A7y+T%C6%B0%E1%BB%9Bng+C%E1%BA%A7n+Th%E1%BA%A1nh&t=&z=15&ie=UTF8&iwloc=&output=embed',
             description: 'Di tích tâm linh lưu giữ bộ xương cá voi khổng lồ 12m, cái nôi của Đại lễ Nghinh Ông Cần Giờ.'
+        },
+        {
+            id: 'p_7',
+            name: 'Đình Thần Dương Văn Hạnh',
+            category: 'lich-su',
+            location: 'Xã Lý Nhơn, Cần Giờ',
+            image: 'Images/dinh-duong-van-hanh.jpg',
+            mapUrl: 'https://maps.google.com/maps?q=%C4%90%C3%ACnh+th%E1%BA%A7n+D%C6%B0%C6%A1ng+V%C4%83n+H%E1%BA%A1nh+L%C3%BD+Nh%C6%A1n+C%E1%BA%A7n+Gi%E1%BB%9D&t=&z=15&ie=UTF8&iwloc=&output=embed',
+            description: 'Đình thờ “Thần Không Đầu” – Di tích lịch sử cấp TP.HCM, thờ vị danh tướng trung liệt của phong trào Trương Định.'
+        },
+        {
+            id: 'p_8',
+            name: 'Nghĩa Trang Liệt Sĩ Rừng Sác',
+            category: 'lich-su',
+            location: 'Thị trấn Cần Thạnh, Cần Giờ',
+            image: 'Images/nghia-trang-rung-sac.jpg',
+            mapUrl: 'https://maps.google.com/maps?q=Ngh%C4%A9a+trang+li%E1%BB%87t+s%C4%A9+R%E1%BB%ABng+S%C3%A1c+C%E1%BA%A7n+Gi%E1%BB%9D&t=&z=15&ie=UTF8&iwloc=&output=embed',
+            description: 'Nơi an nghỉ của hơn 1.221 phần mộ liệt sĩ đã chiến đấu và hy sinh tại chiến khu Rừng Sác qua hai cuộc kháng chiến.'
+        },
+        {
+            id: 'p_9',
+            name: 'Đền Thờ Anh Hùng Liệt Sĩ Rừng Sác',
+            category: 'lich-su',
+            location: 'Đường Lương Văn Nho, Cần Thạnh',
+            image: 'Images/den-tho-liet-si.jpg',
+            mapUrl: 'https://maps.google.com/maps?q=%C4%90%E1%BB%81n+th%E1%BB%9D+Anh+h%C3%B9ng+li%E1%BB%87t+s%C4%A9+R%E1%BB%ABng+S%C3%A1c+C%E1%BA%A7n+Gi%E1%BB%9D&t=&z=15&ie=UTF8&iwloc=&output=embed',
+            description: 'Công trình khánh thành tháng 7/2024 cạnh nghĩa trang trên đường Lương Văn Nho, thờ tự và ghi danh các chiến sĩ đặc công Rừng Sác.'
         }
     ],
     foods: [
@@ -182,6 +209,23 @@ function initDatabase() {
     }
     if (!localStorage.getItem(STORAGE_KEYS.PLACES)) {
         localStorage.setItem(STORAGE_KEYS.PLACES, JSON.stringify(DEFAULT_DATA.places));
+    } else {
+        // Tự động đồng bộ các địa điểm mới bổ sung
+        try {
+            const storedPlaces = JSON.parse(localStorage.getItem(STORAGE_KEYS.PLACES) || '[]');
+            let hasNew = false;
+            DEFAULT_DATA.places.forEach(dp => {
+                if (!storedPlaces.some(sp => sp.id === dp.id)) {
+                    storedPlaces.push(dp);
+                    hasNew = true;
+                }
+            });
+            if (hasNew) {
+                localStorage.setItem(STORAGE_KEYS.PLACES, JSON.stringify(storedPlaces));
+            }
+        } catch (e) {
+            localStorage.setItem(STORAGE_KEYS.PLACES, JSON.stringify(DEFAULT_DATA.places));
+        }
     }
     if (!localStorage.getItem(STORAGE_KEYS.FOODS)) {
         localStorage.setItem(STORAGE_KEYS.FOODS, JSON.stringify(DEFAULT_DATA.foods));
