@@ -487,11 +487,32 @@ window.toggleRitualBox = function () {
     }
 };
 
+window.toggleXuanDetailsBox = function () {
+    const box = document.getElementById('xuanDetailsBox');
+    const btn = document.getElementById('btnToggleXuanDetails');
+    const card = document.getElementById('le-hoi-xuan');
+    if (!box || !btn) return;
+
+    const isHidden = (box.style.display === 'none' || !box.style.display);
+    if (isHidden) {
+        box.style.display = 'block';
+        if (card) card.classList.add('is-expanded');
+        btn.innerHTML = 'Thu gọn &uarr;';
+    } else {
+        box.style.display = 'none';
+        if (card) card.classList.remove('is-expanded');
+        btn.innerHTML = 'Xem chi tiết &darr;';
+    }
+};
+
 const ritualSliderState = {
     vieng: 0,
     thuongky: 0,
     nghinhong: 0,
-    cungte: 0
+    cungte: 0,
+    vuichoi: 0,
+    anun: 0,
+    phaohoa: 0
 };
 
 window.moveRitualSlide = function (sliderKey, step) {

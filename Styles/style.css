@@ -2242,6 +2242,12 @@ img {
     gap: 16px;
 }
 
+.rituals-grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
 .ritual-card-item {
     background: #FFFFFF;
     border: 1px solid #E2DED9;
@@ -2387,7 +2393,8 @@ img {
 }
 
 @media (max-width: 800px) {
-    .rituals-grid {
+    .rituals-grid,
+    .rituals-grid-3col {
         grid-template-columns: 1fr;
     }
     .ritual-slider-frame {

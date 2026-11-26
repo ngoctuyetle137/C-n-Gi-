@@ -271,7 +271,7 @@
             <article class="festival-card festival-card-reverse" id="le-hoi-xuan">
                 <div class="festival-media">
                     <span class="festival-badge">Lễ Hội Đầu Năm</span>
-                    <img src="Images/hoang-hon.jpg" alt="Hoàng hôn và không khí rực rỡ tại lễ hội ven biển Cần Giờ">
+                    <img src="Images/xuan_cg/lam-bia.jfif" alt="Không khí Lễ hội Xuân Cần Giờ">
                 </div>
                 <div class="festival-info">
                     <span class="festival-tag">Sự Kiện Đương Đại &bull; Mùa Xuân Biển Xanh</span>
@@ -313,6 +313,119 @@
                                 <strong>Các sự kiện lễ hội âm nhạc đường phố:</strong> Biểu diễn acoustic ven biển, hội chợ xuân, trình diễn diều nghệ thuật khổng lồ và các giải đấu thể thao nước sôi động.
                             </li>
                         </ul>
+
+                        <div>
+                            <button type="button" class="btn-ritual-toggle" id="btnToggleXuanDetails" onclick="toggleXuanDetailsBox()">
+                                Xem chi tiết &darr;
+                            </button>
+                        </div>
+
+                        <!-- Khung Chi Tiết 3 Mục Lễ Hội Xuân (Vui chơi, Ăn uống, Pháo hoa) -->
+                        <div class="ritual-details-container" id="xuanDetailsBox" style="display: none;">
+                            <div class="rituals-grid rituals-grid-3col">
+                                <!-- Mục 1: Vui chơi -->
+                                <div class="ritual-card-item">
+                                    <div class="ritual-card-content">
+                                        <h4 class="ritual-card-heading">1. Hoạt Động Vui Chơi</h4>
+                                        <p class="ritual-card-text">
+                                            Trải nghiệm bay khinh khí cầu ngắm trọn biển Cần Giờ, trình diễn diều nghệ thuật và các hoạt động vui chơi giải trí ngày xuân sôi động.
+                                        </p>
+                                    </div>
+                                    <div class="ritual-slider-frame" data-slider="vuichoi">
+                                        <span class="ritual-slide-counter">1 / 3</span>
+                                        <div class="ritual-slider-track">
+                                            <div class="ritual-slide">
+                                                <img src="Images/xuan_cg/vui-choi-1.jpg" alt="Vui chơi lễ hội xuân 1">
+                                                <div class="ritual-slide-caption">Ảnh 1/3: Trình diễn khinh khí cầu rực rỡ sắc màu ngắm biển Cần Giờ</div>
+                                            </div>
+                                            <div class="ritual-slide">
+                                                <img src="Images/xuan_cg/vui-choi-2.jpg" alt="Vui chơi lễ hội xuân 2">
+                                                <div class="ritual-slide-caption">Ảnh 2/3: Khu vui chơi giải trí ngoài trời nhộn nhịp du khách</div>
+                                            </div>
+                                            <div class="ritual-slide">
+                                                <img src="Images/xuan_cg/vui-choi-3.jpg" alt="Vui chơi lễ hội xuân 3">
+                                                <div class="ritual-slide-caption">Ảnh 3/3: Không gian trải nghiệm ngày xuân ngập tràn sắc màu</div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="ritual-nav-btn prev" onclick="moveRitualSlide('vuichoi', -1)" aria-label="Ảnh trước">&#10094;</button>
+                                        <button type="button" class="ritual-nav-btn next" onclick="moveRitualSlide('vuichoi', 1)" aria-label="Ảnh tiếp theo">&#10095;</button>
+                                        <div class="ritual-dots-bar">
+                                            <span class="ritual-dot active" onclick="setRitualSlide('vuichoi', 0)"></span>
+                                            <span class="ritual-dot" onclick="setRitualSlide('vuichoi', 1)"></span>
+                                            <span class="ritual-dot" onclick="setRitualSlide('vuichoi', 2)"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mục 2: Ăn uống -->
+                                <div class="ritual-card-item">
+                                    <div class="ritual-card-content">
+                                        <h4 class="ritual-card-heading">2. Không Gian Ăn Uống</h4>
+                                        <p class="ritual-card-text">
+                                            Thưởng thức hải sản tươi ngon đặc sản biển Cần Giờ cùng hàng trăm món ngon cổ truyền ba miền tại không gian ẩm thực xuân đậm đà bản sắc.
+                                        </p>
+                                    </div>
+                                    <div class="ritual-slider-frame" data-slider="anun">
+                                        <span class="ritual-slide-counter">1 / 3</span>
+                                        <div class="ritual-slider-track">
+                                            <div class="ritual-slide">
+                                                <img src="Images/xuan_cg/an-un-1.jfif" alt="Ẩm thực lễ hội xuân 1">
+                                                <div class="ritual-slide-caption">Ảnh 1/3: Không gian ẩm thực ngày Tết ấm cúng và phong phú</div>
+                                            </div>
+                                            <div class="ritual-slide">
+                                                <img src="Images/xuan_cg/an-un-2.jpg" alt="Ẩm thực lễ hội xuân 2">
+                                                <div class="ritual-slide-caption">Ảnh 2/3: Thưởng thức hải sản tươi ngon tại gian hàng ẩm thực Cần Giờ</div>
+                                            </div>
+                                            <div class="ritual-slide">
+                                                <img src="Images/xuan_cg/an-un-3.jpg" alt="Ẩm thực lễ hội xuân 3">
+                                                <div class="ritual-slide-caption">Ảnh 3/3: Các món ăn đặc sản biển hấp dẫn níu chân thực khách</div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="ritual-nav-btn prev" onclick="moveRitualSlide('anun', -1)" aria-label="Ảnh trước">&#10094;</button>
+                                        <button type="button" class="ritual-nav-btn next" onclick="moveRitualSlide('anun', 1)" aria-label="Ảnh tiếp theo">&#10095;</button>
+                                        <div class="ritual-dots-bar">
+                                            <span class="ritual-dot active" onclick="setRitualSlide('anun', 0)"></span>
+                                            <span class="ritual-dot" onclick="setRitualSlide('anun', 1)"></span>
+                                            <span class="ritual-dot" onclick="setRitualSlide('anun', 2)"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mục 3: Pháo hoa -->
+                                <div class="ritual-card-item">
+                                    <div class="ritual-card-content">
+                                        <h4 class="ritual-card-heading">3. Bắn Pháo Hoa Giao Thừa</h4>
+                                        <p class="ritual-card-text">
+                                            Mãn nhãn với những màn pháo hoa rực sáng lung linh soi bóng trên vịnh biển Cần Giờ trong khoảnh khắc đón chào năm mới thiêng liêng.
+                                        </p>
+                                    </div>
+                                    <div class="ritual-slider-frame" data-slider="phaohoa">
+                                        <span class="ritual-slide-counter">1 / 3</span>
+                                        <div class="ritual-slider-track">
+                                            <div class="ritual-slide">
+                                                <img src="Images/xuan_cg/phao-hoa-1.jfif" alt="Pháo hoa lễ hội xuân 1">
+                                                <div class="ritual-slide-caption">Ảnh 1/3: Màn bắn pháo hoa rực rỡ lung linh đón giao thừa</div>
+                                            </div>
+                                            <div class="ritual-slide">
+                                                <img src="Images/xuan_cg/phao-hoa-2.jfif" alt="Pháo hoa lễ hội xuân 2">
+                                                <div class="ritual-slide-caption">Ảnh 2/3: Pháo hoa bừng sáng lung linh trên vùng vịnh Cần Giờ</div>
+                                            </div>
+                                            <div class="ritual-slide">
+                                                <img src="Images/xuan_cg/phao-hoa-3.jfif" alt="Pháo hoa lễ hội xuân 3">
+                                                <div class="ritual-slide-caption">Ảnh 3/3: Khoảnh khắc chào đón năm mới ngập tràn niềm vui</div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="ritual-nav-btn prev" onclick="moveRitualSlide('phaohoa', -1)" aria-label="Ảnh trước">&#10094;</button>
+                                        <button type="button" class="ritual-nav-btn next" onclick="moveRitualSlide('phaohoa', 1)" aria-label="Ảnh tiếp theo">&#10095;</button>
+                                        <div class="ritual-dots-bar">
+                                            <span class="ritual-dot active" onclick="setRitualSlide('phaohoa', 0)"></span>
+                                            <span class="ritual-dot" onclick="setRitualSlide('phaohoa', 1)"></span>
+                                            <span class="ritual-dot" onclick="setRitualSlide('phaohoa', 2)"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>
