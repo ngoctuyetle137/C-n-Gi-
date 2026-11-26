@@ -510,6 +510,7 @@ const ritualSliderState = {
     thuongky: 0,
     nghinhong: 0,
     cungte: 0,
+    leocotmo: 0,
     vuichoi: 0,
     anun: 0,
     phaohoa: 0
